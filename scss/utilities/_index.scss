@@ -5,3 +5,7 @@
 @import 'config';
 @import 'mixins';
 @import 'fonts';
+
+// Importing Slick SCSS that has been moved out of the js folder into the scss folder for neatness
+@import 'slick-theme';
+@import 'slick';
