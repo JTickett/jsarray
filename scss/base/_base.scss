@@ -1,0 +1,39 @@
+// =====================================================
+// Base Styles
+// =====================================================
+
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+//  This was just kept from the Homepage project :)
+//  No purpose other than to remind what I used it for before.
+// body {
+//   color: #666;
+//   font-size: 1rem;
+//   font-family: Poppins, sans-serif;
+//   letter-spacing: 0.4px;
+//   background-color: #fff;
+// }
+
+
+//  Reused Classes
+.reusable-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    //border: 1px solid yellow; // (Just for debug)
+
+    @include mq(medium) {
+      width: 750px;
+    }
+    @include mq(large) {
+        width: 970px;
+    }
+    @include mq(x-large) {
+        width: 1200px;
+    }
+
+}

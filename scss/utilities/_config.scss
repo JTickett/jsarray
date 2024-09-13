@@ -1,0 +1,27 @@
+// =====================================================
+// Config/Variables
+// =====================================================
+
+//  Colours
+
+//  Font Weights
+$font-xlight: 300;
+$font-light: 400;
+$font-med: 500;
+$font-bold: 600;
+$font-xbold: 700;
+
+//  Breakpoints
+$break--xs: 1px;
+$break--s: 460px;
+$break--m: 768px;
+$break--l: 992px;
+$break--xl: 1260px;
+
+//  Z-indexes
+$z-sidebar: 1;
+$z-header: 2;
+$z-submenus: 3;
+$z-pagewrapper-dim: 4;
+$z-pagewrapper: 5;
+$z-cookies: 6;

@@ -1,0 +1,72 @@
+// =====================================================
+// Mixins Partial
+// =====================================================
+
+
+
+@mixin button ($bkcolor, $brcolor:null, $lheight:50px, $bradius:3px) {
+
+    //  Assign background colour passed as parameter
+    background-color: $bkcolor;
+
+    //  Optional border style from parameter (default: null)
+    border-color: $brcolor;
+    // Only place I've seen this used is for 1px solid transparent in the client tooltips
+
+
+    //  Also pass border radius? Some of these seem to differ a tiny amount (default 3px)
+    border-radius: $bradius;
+
+    //  Pass line height as a param?? Some buttons are thicc
+    line-height: $lheight;
+
+    //  Default styles of buttons
+    color: $white;
+    display: inline-block;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 5px 15px;
+
+    //  Prevent underlining links.
+    text-decoration: none;
+    :hover {
+        text-decoration: none;
+    }
+}
+
+//  Media Queries
+@mixin mq($breakpoint) {
+    @if $breakpoint == "x-small" {
+      @media (min-width: $break--xs) and (max-width: $break--s) {
+        @content;
+      }
+    } @else if $breakpoint == "small" {
+      @media (min-width: #{$break--s}) and (max-width: $break--m) {
+        @content;
+      }
+    } @else if $breakpoint == "medium" {
+      @media (min-width: #{$break--m}) {
+        @content;
+      }
+    } @else if $breakpoint == "large" {
+      @media (min-width: #{$break--l}) {
+        @content;
+      }
+    } @else if $breakpoint == "x-large" {
+      @media (min-width: #{$break--xl}) {
+        @content;
+      }
+    } @else {
+      @error "#{$breakpoint} isn't a valid media query size!";
+    }
+  }
+
+  //  For the service cards hover effect.
+  @mixin cardhover($colour:null) { 
+    @if $colour != null {
+      background-color:$colour; 
+      border-color:$colour;
+    }
+    top: -10px;
+
+}
