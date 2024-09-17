@@ -1,0 +1,44 @@
+#email-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+button,
+input {
+  width: 100%;
+  border: none;
+  font-size: 1.1rem;
+  padding: 15px;
+}
+
+#emailInput {
+  line-height: 20px;
+  //padding:10px;
+  border-radius: $br-small;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#assignImageButton {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+
+  @include button($bkcolor: $btn-email);
+}
+
+#newImageButton {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  @include button($bkcolor: $btn-random);
+}

@@ -2,7 +2,14 @@
 // Config/Variables
 // =====================================================
 
-//  Colours
+//  Page Background Colours
+$bgcolor-body: white;
+$bgcolor-container: lightgrey;
+
+//  Button Colours
+$btn-email: #007bff;
+$btn-random: #28a745;
+$btn-reset: #da5656;
 
 //  Font Weights
 $font-xlight: 300;
@@ -25,3 +32,8 @@ $z-submenus: 3;
 $z-pagewrapper-dim: 4;
 $z-pagewrapper: 5;
 $z-cookies: 6;
+
+
+//  Border Radius
+$br-large: 10px;
+$br-small: 5px;
