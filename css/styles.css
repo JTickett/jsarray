@@ -321,7 +321,7 @@ body {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid red;
+  border: 5px solid rgba(255, 255, 255, 0.5);
   text-align: center;
   background-color: lightgrey;
   border-radius: 10px;
@@ -357,6 +357,7 @@ center {
 }
 
 h1 {
+  display: none;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 20px;
@@ -385,7 +386,7 @@ input {
   padding: 15px;
 }
 
-#emailInput {
+#email-input {
   line-height: 20px;
   border-radius: 5px;
   display: block;
@@ -394,7 +395,7 @@ input {
   text-align: center;
 }
 
-#assignImageButton {
+#assign-button {
   display: block;
   justify-content: center;
   align-items: center;
@@ -408,11 +409,11 @@ input {
   font-weight: 400;
   text-decoration: none;
 }
-#assignImageButton :hover {
+#assign-button :hover {
   text-decoration: none;
 }
 
-#newImageButton {
+#random-image-button {
   display: block;
   justify-content: center;
   align-items: center;
@@ -425,7 +426,7 @@ input {
   font-weight: 400;
   text-decoration: none;
 }
-#newImageButton :hover {
+#random-image-button :hover {
   text-decoration: none;
 }
 

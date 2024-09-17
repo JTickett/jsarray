@@ -14,9 +14,8 @@ input {
   padding: 15px;
 }
 
-#emailInput {
+#email-input {
   line-height: 20px;
-  //padding:10px;
   border-radius: $br-small;
   display: block;
   justify-content: center;
@@ -24,7 +23,7 @@ input {
   text-align: center;
 }
 
-#assignImageButton {
+#assign-button {
   display: block;
   justify-content: center;
   align-items: center;
@@ -34,7 +33,7 @@ input {
   @include button($bkcolor: $btn-email);
 }
 
-#newImageButton {
+#random-image-button {
   display: block;
   justify-content: center;
   align-items: center;

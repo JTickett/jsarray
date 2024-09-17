@@ -3,7 +3,7 @@ const apiUrl = 'https://picsum.photos/600';
 
 $(document).ready(function(){
 
-    $('#newImageButton').on('click', function(e){
+    $('#random-image-button').on('click', function(e){
         loadRandomImage();
     });
 
