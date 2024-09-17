@@ -13,8 +13,10 @@ const defaultImageUrl = 'https://picsum.photos/id/40/600/600';
 // Load a new random image
 function loadRandomImage() {
   
-  //  The random param here is purely to prevent it from being cached... it does *not* act as a seed!
-  const newImageUrl = apiUrl + "?random=" + new Date().getTime();
+  // Variables
+const apiUrl = "https://picsum.photos/600";
+const apiUrlSeed = "https://picsum.photos/seed/";
+const defaultImageUrl = 'https://picsum.photos/id/40/600/600';
 
   //  Generate a random seed (two options)
   const randomSeed1 = Math.floor(Math.random() * 10000);
