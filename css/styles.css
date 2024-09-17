@@ -370,7 +370,9 @@ h2 {
   margin-top: 20px;
 }
 
-button, input, select {
+button,
+input,
+select {
   width: 100%;
   border: none;
   font-size: 1.1rem;
@@ -425,6 +427,14 @@ button, input, select {
   align-items: center;
   text-align: center;
   margin-top: 10px;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
 }
 
 img {
