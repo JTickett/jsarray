@@ -1,15 +1,14 @@
 
 button,input,select {
-  width: 100%;
+  width: $element-width;
   border: none;
   font-size: 1.1rem;
   padding: 15px;
+  border-radius: $br-small;
 }
 
 #email-input {
   line-height: 20px;
-  border-radius: $br-small;
-  display: block;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -30,4 +29,12 @@ button,input,select {
   align-items: center;
   text-align: center;
   @include button($bgcolor: $btn-random);
+}
+
+#email-list {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+
 }

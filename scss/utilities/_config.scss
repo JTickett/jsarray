@@ -11,6 +11,10 @@ $btn-email: #007bff;
 $btn-random: #28a745;
 $btn-reset: #da5656;
 
+//  Width related settings
+$element-width: 100%;
+$element-max-width: 600px;
+
 //  Font Weights
 $font-xlight: 300;
 $font-light: 400;
@@ -32,7 +36,6 @@ $z-submenus: 3;
 $z-pagewrapper-dim: 4;
 $z-pagewrapper: 5;
 $z-cookies: 6;
-
 
 //  Border Radius
 $br-large: 10px;

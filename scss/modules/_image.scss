@@ -1,6 +1,6 @@
 img {
-    max-width: 600px;
-    width: 100%;
-    border-radius: 5px;
+    max-width: $element-max-width;
+    width: $element-width;
+    border-radius: $br-small;
     margin-top: 10px;
 }
