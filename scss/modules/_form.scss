@@ -1,13 +1,5 @@
-#email-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 
-button,
-input {
+button,input,select {
   width: 100%;
   border: none;
   font-size: 1.1rem;
@@ -23,14 +15,13 @@ input {
   text-align: center;
 }
 
-#assign-button {
+#assign-to-email-button {
   display: block;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin-top: 10px;
-
-  @include button($bkcolor: $btn-email);
+  @include button($bgcolor: $btn-email);
 }
 
 #random-image-button {
@@ -38,6 +29,5 @@ input {
   justify-content: center;
   align-items: center;
   text-align: center;
-
-  @include button($bkcolor: $btn-random);
+  @include button($bgcolor: $btn-random);
 }

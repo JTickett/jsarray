@@ -2,9 +2,10 @@
 // Mixins Partial
 // =====================================================
 
-@mixin button($bkcolor, $brcolor: null, $lheight: 20px, $bradius: $br-small) {
+@mixin button($bgcolor, $brcolor: null, $lheight: 20px, $bradius: $br-small) {
+  
   //  Assign parameters to variables
-  background-color: $bkcolor;
+  background-color: $bgcolor;
   border-color: $brcolor;
   border-radius: $bradius;
   line-height: $lheight;
@@ -13,14 +14,15 @@
   color: white;
   display: inline-block;
   font-weight: $font-light;
-  // text-transform: uppercase;
-  // padding: 5px 15px;
   
   //  Prevent underlining links.
   text-decoration: none;
   :hover {
     text-decoration: none;
   }
+
+  //  Allow for additional styles to be added.
+  @content;
 }
 
 //  Media Queries
