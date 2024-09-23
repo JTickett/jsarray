@@ -9,20 +9,20 @@ function assignImageToEmail(email, imageURL) {
 
     // If the email is not in the list, add it, otherwise do nothing
     if (!isEmailInList(email)) {
-        console.log("New Email: " + email);
+        log("New Email: " + email);
         addEmailToList(email);
     } else {
-        console.log("Email already exists: " + email);
+        log("Email already exists: " + email);
     }
 
     // AT THIS POINT, THE EMAIL LIST ITEM EXISTS
     // If the image is not in the list, add it, otherwise do nothing
     if (!isImageInList(email, imageURL)) {
-        console.log("Adding new Image for this email: " + imageURL);
+        log("Adding new Image for this email: " + imageURL);
         addImageToList(email, imageURL);
-        console.log("Success!");
+        log("Success!");
     } else {
-        console.log("Image already exists for this Email: " + imageURL);
+        log("Image already exists for this Email: " + imageURL);
     }
 
     
@@ -33,10 +33,10 @@ function assignImageToEmail(email, imageURL) {
 function isImageInList(email, imageURL) {
     const $imageListItem = findImageListItem(email, imageURL);
     if ($imageListItem.length > 0) {
-        console.log("Matching Image Found: " + $imageListItem.attr("src"));
+        log("Matching Image Found: " + $imageListItem.attr("src"));
         return true;
     } else {
-        console.log("No matching image found: " + imageURL);
+        log("No matching image found: " + imageURL);
         return false;
     }
 }
@@ -74,10 +74,10 @@ function addImageToList(email, imageURL) {
 function isEmailInList(email) {
     const $emailListItem = findEmailListItem(email);
     if ($emailListItem.length > 0) {
-        console.log("Matching Email Found: " + $emailListItem.attr("value"));
+        log("Matching Email Found: " + $emailListItem.attr("value"));
         return true;
     } else {
-        console.log("No matching email found: " + email);
+        log("No matching email found: " + email);
         return false;
     }
 }
