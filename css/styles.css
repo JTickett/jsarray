@@ -445,12 +445,29 @@ img {
   align-items: center;
 }
 
-.email-list {
-  border: 1px solid #007bff;
+#email-list {
+  border: 0px solid #007bff;
 }
 
 .image-list {
-  border: 1px solid #28a745;
+  border: 0px solid #28a745;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.image-list-item {
+  border: 0px solid #da5656;
+}
+
+.collection-image {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.collection-image:hover {
+  -ms-transform: scale(2.3); /* IE 9 */
+  -webkit-transform: scale(2.3); /* Safari 3-8 */
+  transform: scale(2.3);
 }
 
 .hidden {
