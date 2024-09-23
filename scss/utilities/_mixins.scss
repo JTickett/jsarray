@@ -3,7 +3,6 @@
 // =====================================================
 
 @mixin button($bgcolor, $brcolor: null, $lheight: 20px, $bradius: $br-small) {
-  
   //  Assign parameters to variables
   background-color: $bgcolor;
   border-color: $brcolor;
@@ -14,7 +13,7 @@
   color: white;
   display: inline-block;
   font-weight: $font-light;
-  
+
   //  Prevent underlining links.
   text-decoration: none;
   :hover {

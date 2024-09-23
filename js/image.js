@@ -1,4 +1,3 @@
-
 // Load a new random image from Picsum
 function loadRandomPicsumImage() {
   // API URL Variables
@@ -20,15 +19,15 @@ function loadRandomPicsumImage() {
   localStorage.setItem("currentImage", newImageUrl);
 }
 
-
 // Load a new random image from Unsplash (This is a WIP!)
 function loadRandomUnsplashImage() {
   // API URL Variables
   const accessKey = "B75ND5dB45bpRsgNSq8ilB_9_Nnx2PrJZfmRep88Fns";
-  const unsplashURL = "https://api.unsplash.com/photos/random/?client_id=" + accessKey + "&orientation=squarish";
+  const unsplashURL =
+    "https://api.unsplash.com/photos/random/?client_id=" +
+    accessKey +
+    "&orientation=squarish";
 
   //  Set the new image URL as the source of the image
   $("#random-image").attr("src", unsplashURL);
 }
-
-
