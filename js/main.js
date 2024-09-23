@@ -5,13 +5,13 @@ $(document).ready(function(){
 
     // Add Event Handlers to buttons on the page
     $('#email-form').on('submit', function(e){
-        const inputEmail = $("#email-input").val();
         e.preventDefault();
-        
-        storeCurrentlySelectedEmail(inputEmail);
-        assignImageToEmail(inputEmail);
-
+        const inputEmail = $("#email-input").val();
+        const currentImageSourceURL = $("#random-image").attr("src");
+        assignImageToEmail(inputEmail, currentImageSourceURL);
     });
+
+
     $("#random-image-button").on("click", function (e) {
         loadRandomPicsumImage();
     });
