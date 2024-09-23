@@ -1,32 +1,16 @@
-$(document).ready(function(){
 
-    
-
-
-});
-
+// Assign image to email
 function assignImageToEmail(inputEmail) {
     const email = inputEmail;
     const image = $("#random-image").attr("src");
     localStorage.setItem(email, image);
-
-    //  HERE IT SHOULD ALSO CREATE AN IMAGE IN THE UNORDERED LIST FOR THE SELECTED EMAIL
-
+    addImageToCollection(email, image);
 }
 
-function storeCurrentlySelectedEmail(selection) {
-    localStorage.setItem("currentlySelectedEmail", selection);
 
+// Add image to collection (rendered on screen)
+function addImageToCollection(email, image) {
+    localStorage.setItem(email, image);
 }
-
-function retrieveCurrentlySelectedEmail() {
-    const testRetrieve = localStorage.getItem("currentlySelectedEmail");
-    console.log(testRetrieve);
-    if (testRetrieve) {
-        console.log("testRetrieve is not null");
-        $("#email-input").val(testRetrieve);
-    }
-}
-
 
 

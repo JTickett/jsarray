@@ -2,5 +2,17 @@ img {
     max-width: $element-max-width;
     width: $element-width;
     border-radius: $br-small;
-    margin-top: 10px;
+}
+
+.email-list, .image-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email-list{
+    border: 1px solid $btn-email;
+} 
+.image-list{
+    border: 1px solid $btn-random;
 }
