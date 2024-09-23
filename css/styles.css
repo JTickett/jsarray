@@ -380,6 +380,10 @@ select {
   border-radius: 5px;
 }
 
+button {
+  cursor: pointer;
+}
+
 #email-input {
   line-height: 20px;
   justify-content: center;
@@ -420,13 +424,6 @@ select {
 }
 #random-image-button :hover {
   text-decoration: none;
-}
-
-#email-list {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-top: 10px;
 }
 
 .invisible {

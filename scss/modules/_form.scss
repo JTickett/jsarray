@@ -8,6 +8,10 @@ select {
   border-radius: $br-small;
 }
 
+button {
+    cursor: pointer;
+}
+
 #email-input {
   line-height: 20px;
   justify-content: center;
@@ -30,13 +34,6 @@ select {
   align-items: center;
   text-align: center;
   @include button($bgcolor: $btn-random);
-}
-
-#email-list {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-top: 10px;
 }
 
 .invisible {
