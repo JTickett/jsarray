@@ -9,10 +9,6 @@ select {
   margin-top: 10px;
 }
 
-button {
-  cursor: pointer;
-}
-
 #email-input {
   line-height: 20px;
   justify-content: center;
@@ -20,21 +16,35 @@ button {
   text-align: center;
 }
 
+#random-image-button {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include button($bgcolor: $btn-random, $brcolor: darken($btn-random, 0%));
+    &:hover {
+      background-color: lighten($btn-random, 10%);
+    }
+  }
+  
 #assign-to-email-button {
   display: block;
   justify-content: center;
   align-items: center;
   text-align: center;
-  @include button($bgcolor: $btn-email);
+  @include button($bgcolor: $btn-email, $brcolor: darken($btn-email, 0%));
+  &:hover {
+    background-color: lighten($btn-email, 10%);
+  }
 }
 
-#random-image-button {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  @include button($bgcolor: $btn-random);
-}
+
+button {
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: $transition-button;
+  }
 
 .invisible {
   display: none;

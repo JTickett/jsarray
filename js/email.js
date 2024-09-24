@@ -63,6 +63,16 @@ function addImageToList(email, imageURL) {
       "' alt='Assigned Image'>" +
       "</li>"
   );
+
+  // Add event listener to the newly img
+  $imageList.find(".collection-image").last().on("click", function() {
+
+    // This would make the main image match the clicked image
+    $('#random-image').attr('src', imageURL);
+
+  });
+
+
 }
 
 // Check if the email is in the list, and return a value of true or false
@@ -99,4 +109,11 @@ function addEmailToList(email) {
       "</ul>" +
       "</li>"
   );
+
+  // Add event listener to the newly created h2 tag
+  $emailList.find(".email-list-item-title").last().on("click", function() {
+    $('#email-input').val(email);
+  });
+
+  
 }

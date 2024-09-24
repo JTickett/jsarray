@@ -356,6 +356,7 @@ input {
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }
 
 html,
@@ -371,7 +372,6 @@ body {
   margin: 0;
   color: black;
   font-size: 1rem;
-  font-family: sans-serif;
   letter-spacing: 1px;
   background-color: white;
 }
@@ -430,6 +430,19 @@ h2 {
   margin-top: 20px;
 }
 
+.email-list-item-title {
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  font-family: "Raleway", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+.email-list-item-title:hover {
+  color: white;
+  font-weight: 700;
+}
+
 button,
 input,
 select {
@@ -441,32 +454,11 @@ select {
   margin-top: 10px;
 }
 
-button {
-  cursor: pointer;
-}
-
 #email-input {
   line-height: 20px;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-#assign-to-email-button {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #007bff;
-  border-radius: 5px;
-  line-height: 20px;
-  color: white;
-  display: inline-block;
-  font-weight: 400;
-  text-decoration: none;
-}
-#assign-to-email-button :hover {
-  text-decoration: none;
 }
 
 #random-image-button {
@@ -475,15 +467,45 @@ button {
   align-items: center;
   text-align: center;
   background-color: #28a745;
+  border: 2px solid #28a745;
   border-radius: 5px;
   line-height: 20px;
   color: white;
   display: inline-block;
-  font-weight: 400;
   text-decoration: none;
 }
 #random-image-button :hover {
   text-decoration: none;
+}
+#random-image-button:hover {
+  background-color: #34ce57;
+}
+
+#assign-to-email-button {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  line-height: 20px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+}
+#assign-to-email-button :hover {
+  text-decoration: none;
+}
+#assign-to-email-button:hover {
+  background-color: #3395ff;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .invisible {
@@ -514,7 +536,7 @@ img {
 .image-list {
   border: 0px solid #28a745;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
 
@@ -524,12 +546,16 @@ img {
 
 .collection-image {
   transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  cursor: pointer;
+}
+.collection-image:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2);
 }
 
-.collection-image:hover {
-  -ms-transform: scale(2.3); /* IE 9 */
-  -webkit-transform: scale(2.3); /* Safari 3-8 */
-  transform: scale(2.3);
+#random-image {
+  cursor: pointer;
 }
 
 .hidden {

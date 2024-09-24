@@ -5,14 +5,13 @@
 @mixin button($bgcolor, $brcolor: null, $lheight: 20px, $bradius: $br-small) {
   //  Assign parameters to variables
   background-color: $bgcolor;
-  border-color: $brcolor;
+  border: 2px solid $brcolor;
   border-radius: $bradius;
   line-height: $lheight;
 
   //  Default styles of buttons
   color: white;
   display: inline-block;
-  font-weight: $font-light;
 
   //  Prevent underlining links.
   text-decoration: none;

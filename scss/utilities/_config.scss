@@ -15,8 +15,12 @@ $btn-reset: #da5656;
 $element-width: 100%;
 $element-max-width: 600px;
 
+// Font Families
+$font-raleway: "Raleway", sans-serif;
+$font-main : $font-raleway; // The currently selected font family used in the project
+
 //  Font Weights
-$font-xlight: 300;
+$font-xlight: 100;
 $font-light: 400;
 $font-med: 500;
 $font-bold: 600;
@@ -44,5 +48,7 @@ $br-debug: 0px;
 
 //  Transition
 $zoom-duration: 0.7s;
-$zoom-scale: 2.3;
+$zoom-scale: 1.2;
 $zoom-curve: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+$transition-button: all 0.3s ease-in-out;
+

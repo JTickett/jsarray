@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-family: $font-main;
 }
 
 html,
@@ -21,7 +22,6 @@ body {
   margin: 0;
   color: black;
   font-size: 1rem;
-  font-family: sans-serif;
   letter-spacing: 1px;
   background-color: $bgcolor-body;
 }
