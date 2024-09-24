@@ -70,6 +70,15 @@ function addImageToList(email, imageURL) {
     // This would make the main image match the clicked image
     $('#random-image').attr('src', imageURL);
 
+    // Remove any existing event listeners
+    $("#random-image").off("click");
+    // Add a new event listener
+    $("#random-image").on("click", function() {
+        // This would open a new tab to the URL of the clicked image but as a larger resolution
+        const newLargerImageURL = imageURL.replace(imageResolution, "/1200/1200");
+        window.open(newLargerImageURL, '_blank');
+      });
+
   });
 
 

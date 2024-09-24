@@ -1,9 +1,10 @@
+// Global Variables
+const picsumUrl = "https://picsum.photos/600";
+const picsumSeedUrl = "https://picsum.photos/seed/";
+const imageResolution = "/600/600";
+
 // Load a new random image from Picsum
 function loadRandomPicsumImage() {
-  // API URL Variables
-  const apiUrl = "https://picsum.photos/600";
-  const apiUrlSeed = "https://picsum.photos/seed/";
-  const imageResolution = "/600/600";
 
   //  Generate random seeds
   const randomSeed1 = Math.floor(Math.random() * 1000000);
@@ -11,7 +12,7 @@ function loadRandomPicsumImage() {
 
   //  Generate the new image URL using the random seeds
   const newImageUrl =
-    apiUrlSeed + randomSeed1 + imageResolution + "?random=" + randomSeed2;
+    picsumSeedUrl + randomSeed1 + imageResolution + "?random=" + randomSeed2;
 
   //  Set the new image URL as the source of the image
   $("#random-image").attr("src", newImageUrl);
