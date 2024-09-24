@@ -58,14 +58,15 @@ function addImageToList(email, imageURL) {
   // Add the image list item
   $imageList.append(
     "<li class='image-list-item'>" +
-      "<img class='collection-image' src='" +
-      imageURL +
-      "' alt='Assigned Image'>" +
+      "<div class='image-container'>" +
+      "<img class='collection-image' src='" + imageURL + "' alt='Assigned Image'>" + 
+      "<div class='delete-button'>X</div>" +
+      "</div>" +
       "</li>"
   );
 
   // Add event listener to the newly img
-  $imageList.find(".collection-image").last().on("click", function() {
+  $imageList.find(".image-container").last().on("click", function() {
 
     // This would make the main image match the clicked image
     $('#random-image').attr('src', imageURL);
@@ -80,6 +81,12 @@ function addImageToList(email, imageURL) {
       });
 
   });
+
+  // Add event listener to the delete button
+  $imageList.find(".delete-button").last().on("click", function() {
+    // Remove the image list item
+    $(this).closest(".image-list-item").remove();
+  });   
 
 
 }
@@ -114,16 +121,38 @@ function addEmailToList(email) {
       "<h2 class='email-list-item-title'>" +
       email +
       "</h2>" +
-      "<span class='remove-email' style='display: none;'>X</span>" +
+      "<div class='remove-email'>X</div>" +
       "<ul class='image-list'>" +
       "</ul>" +
       "</li>"
   );
 
-  // Add event listener to the newly created h2 tag
+  // Add event listener to the newly created h2 tag, so that when it is clicked, the email input field is populated with the email address
   $emailList.find(".email-list-item-title").last().on("click", function() {
     $('#email-input').val(email);
   });
 
-  
+  // THIS IS WHERE YOU NEED TO CONTINUE
+  // YOU NEED TO ADD THE FUNCTIONALITY TO MAKE THE X APPEAR ON HOVER PROPERLY.
+  // THE CODE BELOW ISNT CORRECT!!!!
+
+
+  // Add event listener to the remove email div
+  const $emailListItem = $emailList.find(".email-list-item").last();
+  const $emailListItemTitle = $emailListItem.find(".email-list-item-title");
+  const $removeEmail = $emailListItem.find(".remove-email");
+
+  // Add event listener to the remove email div
+  $removeEmail.on("click", function() {
+    $emailListItem.remove();
+  });
+
+  // Add event listener to the email list item
+  $emailListItem.on("mouseenter", function() {
+    $removeEmail.css("display", "inline-block");
+  });
+  $emailListItem.on("mouseleave", function() {
+    $removeEmail.css("display", "none");
+  });
+
 }

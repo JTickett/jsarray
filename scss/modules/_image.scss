@@ -11,10 +11,6 @@ img {
   align-items: center;
 }
 
-#email-list {
-  border: $br-debug solid $btn-email;
-}
-
 .image-list {
   border: $br-debug solid $btn-random;
   display: grid;
@@ -22,11 +18,16 @@ img {
   grid-gap: 10px;
 }
 
-.image-list-item {
-  border: $br-debug solid $btn-reset;
+#random-image {
+  cursor: pointer;
+  transition: transform $zoom-duration $zoom-curve;
 }
 
-.collection-image {
+
+
+.image-container{
+  position: relative;
+  display: inline-block;
   transition: transform $zoom-duration $zoom-curve;
   filter: blur(0.5px) saturate(0.9);
   cursor: pointer;
@@ -35,16 +36,29 @@ img {
     -webkit-transform: scale($zoom-scale-thumb); /* Safari 3-8 */
     transform: scale($zoom-scale-thumb);
     filter: blur(0px) saturate(1);
+    
+    div.delete-button {
+      display: block;
+    }
   }
 }
 
-#random-image {
+
+.delete-button {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: none;
+  line-height: 0.7rem;
+  color: white;
+  padding: 5px;
   cursor: pointer;
-  transition: transform $zoom-duration $zoom-curve;
+  border-radius: $br-small;
+  font-family: $font-raleway;
+  font-weight: $font-xbold;
   &:hover {
-    -ms-transform: scale($zoom-scale-main); /* IE 9 */
-    -webkit-transform: scale($zoom-scale-main); /* Safari 3-8 */
-    transform: scale($zoom-scale-main);
+    background-color: $btn-reset;
   }
 }
 

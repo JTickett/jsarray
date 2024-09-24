@@ -9,6 +9,15 @@ select {
   margin-top: 10px;
 }
 
+#main-image-container {
+  transition: transform $zoom-duration $zoom-curve;
+  &:hover {
+    -ms-transform: scale($zoom-scale-main); /* IE 9 */
+    -webkit-transform: scale($zoom-scale-main); /* Safari 3-8 */
+    transform: scale($zoom-scale-main);
+  }
+}
+
 #email-input {
   line-height: 20px;
   justify-content: center;
@@ -21,9 +30,10 @@ select {
     justify-content: center;
     align-items: center;
     text-align: center;
-    @include button($bgcolor: $btn-random, $brcolor: darken($btn-random, 0%));
+    @include button($bgcolor: $btn-random, $brcolor: darken($btn-random, 5%));
     &:hover {
       background-color: lighten($btn-random, 10%);
+      border-color: darken($btn-random, 0%);
     }
   }
   
@@ -32,9 +42,10 @@ select {
   justify-content: center;
   align-items: center;
   text-align: center;
-  @include button($bgcolor: $btn-email, $brcolor: darken($btn-email, 0%));
+  @include button($bgcolor: $btn-email, $brcolor: darken($btn-email, 10%));
   &:hover {
     background-color: lighten($btn-email, 10%);
+    border-color: darken($btn-email, 0%);
   }
 }
 
