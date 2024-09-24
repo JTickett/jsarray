@@ -114,6 +114,7 @@ function addEmailToList(email) {
       "<h2 class='email-list-item-title'>" +
       email +
       "</h2>" +
+      "<span class='remove-email' style='display: none;'>X</span>" +
       "<ul class='image-list'>" +
       "</ul>" +
       "</li>"
