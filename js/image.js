@@ -2,6 +2,7 @@
 const picsumUrl = "https://picsum.photos/600";
 const picsumSeedUrl = "https://picsum.photos/seed/";
 const imageResolution = "/600/600";
+const imageResolutionLarge = "/1200/1200";
 
 // Load a new random image from Picsum
 function loadRandomPicsumImage() {
@@ -23,7 +24,7 @@ function loadRandomPicsumImage() {
   // Add a new event listener
   $("#random-image").on("click", function() {
     // This would open a new tab to the URL of the clicked image but as a larger resolution
-    const newLargerImageURL = newImageUrl.replace(imageResolution, "/1200/1200");
+    const newLargerImageURL = newImageUrl.replace(imageResolution, imageResolutionLarge);
     window.open(newLargerImageURL, '_blank');
   });
 

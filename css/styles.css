@@ -378,7 +378,7 @@ body {
 
 #container {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   border: 5px solid rgba(255, 255, 255, 0.5);
@@ -545,17 +545,25 @@ img {
 }
 
 .collection-image {
-  transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  filter: blur(0.5px) saturate(0.9);
   cursor: pointer;
 }
 .collection-image:hover {
-  -ms-transform: scale(1.2); /* IE 9 */
-  -webkit-transform: scale(1.2); /* Safari 3-8 */
-  transform: scale(1.2);
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+  filter: blur(0px) saturate(1);
 }
 
 #random-image {
   cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+#random-image:hover {
+  -ms-transform: scale(1.03); /* IE 9 */
+  -webkit-transform: scale(1.03); /* Safari 3-8 */
+  transform: scale(1.03);
 }
 
 .hidden {

@@ -44,11 +44,13 @@ $z-cookies: 6;
 //  Border Radius
 $br-large: 10px;
 $br-small: 5px;
+$br-xsmall: 3px;
 $br-debug: 0px;
 
 //  Transition
-$zoom-duration: 0.7s;
-$zoom-scale: 1.2;
+$zoom-duration: 0.3s;
+$zoom-scale-thumb: 1.1;
+$zoom-scale-main: 1.03;
 $zoom-curve: cubic-bezier(0.68, -0.55, 0.27, 1.55);
 $transition-button: all 0.3s ease-in-out;
 

@@ -75,7 +75,7 @@ function addImageToList(email, imageURL) {
     // Add a new event listener
     $("#random-image").on("click", function() {
         // This would open a new tab to the URL of the clicked image but as a larger resolution
-        const newLargerImageURL = imageURL.replace(imageResolution, "/1200/1200");
+        const newLargerImageURL = imageURL.replace(imageResolution, imageResolutionLarge);
         window.open(newLargerImageURL, '_blank');
       });
 
