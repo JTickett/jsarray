@@ -25,23 +25,25 @@ select {
   text-align: center;
 }
 
-#random-image-button {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    @include button($bgcolor: $btn-random, $brcolor: darken($btn-random, 5%));
-    &:hover {
-      background-color: lighten($btn-random, 10%);
-      border-color: darken($btn-random, 0%);
-    }
-  }
-  
-#assign-to-email-button {
+// Finally found a nice use case for @extend! :) 
+.button-template {
   display: block;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+#random-image-button {
+  @extend .button-template;
+  @include button($bgcolor: $btn-random, $brcolor: darken($btn-random, 5%));
+  &:hover {
+    background-color: lighten($btn-random, 10%);
+    border-color: darken($btn-random, 0%);
+  }
+}
+  
+#assign-to-email-button {
+  @extend .button-template;
   @include button($bgcolor: $btn-email, $brcolor: darken($btn-email, 10%));
   &:hover {
     background-color: lighten($btn-email, 10%);
@@ -51,11 +53,11 @@ select {
 
 
 button {
-    cursor: pointer;
-    font-weight: 400;
-    font-size: 1.5rem;
-    transition: $transition-button;
-  }
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1.5rem;
+  transition: $transition-button;
+}
 
 .invisible {
   display: none;
