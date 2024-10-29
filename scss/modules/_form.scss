@@ -23,6 +23,17 @@ select {
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  // This would work if we were going to accept test@test,
+  // but it seems like the HTML5 pattern attribute doesn't handle complicated regex with substrings :(
+  // It does also have an issue of blank field being invalid.
+
+  // &:valid{
+  //   background-color: palegreen;
+  // }
+  // &:invalid{
+  //   background-color: lightpink;
+  // }
 }
 
 // Finally found a nice use case for @extend! :) 

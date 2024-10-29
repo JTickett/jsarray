@@ -45,8 +45,19 @@
             <button id="random-image-button" type=button>Randomise Image</button>
 
             <form id="email-form">
-                <input required id="email-input" name=email type=email title="enter your email" autocomplete="email"
-                    placeholder="Enter your email address">
+                <input 
+                    id="email-input"
+                    type="email"
+                    required
+                    title="enter your email" 
+                    autocomplete="email"
+                    placeholder="Enter your email address"
+                />
+                <!--
+                    pattern="(([^()[\]\\.,;:\s@]+(\.[^()[\]\\.,;:\s@]+)*)|.(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))"
+                    oninvalid="this.setCustomValidity('Please enter a valid email address')"
+                    oninput="this.setCustomValidity('')"
+                -->
                 <button id="assign-to-email-button" type=submit>Assign Image to Email</button>
             </form>
 

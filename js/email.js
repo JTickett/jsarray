@@ -21,6 +21,9 @@ function assignImageToEmail(email, imageURL) {
     log("Success!");
   } else {
     log("Image already exists for this Email: " + imageURL);
+    const emailInput = document.getElementById("email-input");
+    emailInput.setCustomValidity("This image is already assigned to this email address!");
+    emailInput.reportValidity();
   }
 }
 
