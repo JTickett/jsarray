@@ -3,8 +3,8 @@ const uniqueEmailAddresses = [];
 
 // Assign image to email
 function assignImageToEmail(email, imageURL) {
-  let $emailListItem = findEmailListItem(email);
-
+  const emailInput = document.getElementById("email-input");
+  emailInput.setCustomValidity("");
   // If the email is not in the list, add it, otherwise do nothing
   if (!isEmailInList(email)) {
     log("New Email: " + email);
@@ -21,7 +21,7 @@ function assignImageToEmail(email, imageURL) {
     log("Success!");
   } else {
     log("Image already exists for this Email: " + imageURL);
-    const emailInput = document.getElementById("email-input");
+    
     emailInput.setCustomValidity("This image is already assigned to this email address!");
     emailInput.reportValidity();
   }
