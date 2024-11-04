@@ -21,9 +21,16 @@ function assignImageToEmail(email, imageURL) {
     log("Success!");
   } else {
     log("Image already exists for this Email: " + imageURL);
-    
-    emailInput.setCustomValidity("This image is already assigned to this email address!");
+    log("dupe!");
+    emailInput.setCustomValidity(
+      "This image is already assigned to this email address!"
+    );
     emailInput.reportValidity();
+    // Timeout needed to avoid problematic clashing with the previous validity message.
+    // I also clear the custom validity message in two other places (when random image assigned, and when email title is clicked)
+    setTimeout(() => {
+      emailInput.setCustomValidity("");
+    }, 500);
   }
 }
 
@@ -62,36 +69,43 @@ function addImageToList(email, imageURL) {
   $imageList.append(
     "<li class='image-list-item'>" +
       "<div class='image-container'>" +
-      "<img class='collection-image' src='" + imageURL + "' alt='Assigned Image'>" + 
+      "<img class='collection-image' src='" +
+      imageURL +
+      "' alt='Assigned Image'>" +
       "<div class='delete-button'>X</div>" +
       "</div>" +
       "</li>"
   );
 
   // Add event listener to the newly img
-  $imageList.find(".image-container").last().on("click", function() {
+  $imageList
+    .find(".image-container")
+    .last()
+    .on("click", function () {
+      // This would make the main image match the clicked image
+      $("#random-image").attr("src", imageURL);
 
-    // This would make the main image match the clicked image
-    $('#random-image').attr('src', imageURL);
-
-    // Remove any existing event listeners
-    $("#random-image").off("click");
-    // Add a new event listener
-    $("#random-image").on("click", function() {
+      // Remove any existing event listeners
+      $("#random-image").off("click");
+      // Add a new event listener
+      $("#random-image").on("click", function () {
         // This would open a new tab to the URL of the clicked image but as a larger resolution
-        const newLargerImageURL = imageURL.replace(imageResolution, imageResolutionLarge);
-        window.open(newLargerImageURL, '_blank');
+        const newLargerImageURL = imageURL.replace(
+          imageResolution,
+          imageResolutionLarge
+        );
+        window.open(newLargerImageURL, "_blank");
       });
-
-  });
+    });
 
   // Add event listener to the delete button
-  $imageList.find(".delete-button").last().on("click", function() {
-    // Remove the image list item
-    $(this).closest(".image-list-item").remove();
-  });   
-
-
+  $imageList
+    .find(".delete-button")
+    .last()
+    .on("click", function () {
+      // Remove the image list item
+      $(this).closest(".image-list-item").remove();
+    });
 }
 
 // Check if the email is in the list, and return a value of true or false
@@ -131,14 +145,17 @@ function addEmailToList(email) {
   );
 
   // Add event listener to the newly created h2 tag, so that when it is clicked, the email input field is populated with the email address
-  $emailList.find(".email-list-item-title").last().on("click", function() {
-    $('#email-input').val(email);
-  });
+  $emailList
+    .find(".email-list-item-title")
+    .last()
+    .on("click", function () {
+      $("#email-input").val(email);
+      nativeEmailInput.setCustomValidity(""); // Clear the custom validity message so that when a new email is selected, the "dupe image" message is not shown as lingering from before
+    });
 
   // THIS IS WHERE YOU NEED TO CONTINUE
   // YOU NEED TO ADD THE FUNCTIONALITY TO MAKE THE X APPEAR ON HOVER PROPERLY.
   // THE CODE BELOW ISNT CORRECT!!!!
-
 
   // Add event listener to the remove email div
   const $emailListItem = $emailList.find(".email-list-item").last();
@@ -146,16 +163,15 @@ function addEmailToList(email) {
   const $removeEmail = $emailListItem.find(".remove-email");
 
   // Add event listener to the remove email div
-  $removeEmail.on("click", function() {
+  $removeEmail.on("click", function () {
     $emailListItem.remove();
   });
 
   // Add event listener to the email list item
-  $emailListItem.on("mouseenter", function() {
+  $emailListItem.on("mouseenter", function () {
     $removeEmail.css("display", "inline-block");
   });
-  $emailListItem.on("mouseleave", function() {
+  $emailListItem.on("mouseleave", function () {
     $removeEmail.css("display", "none");
   });
-
 }

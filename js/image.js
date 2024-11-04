@@ -6,7 +6,6 @@ const imageResolutionLarge = "/1200/1200";
 
 // Load a new random image from Picsum
 function loadRandomPicsumImage() {
-
   //  Generate random seeds
   const randomSeed1 = Math.floor(Math.random() * 1000000);
   const randomSeed2 = new Date().getTime();
@@ -22,10 +21,13 @@ function loadRandomPicsumImage() {
   $("#random-image").off("click");
 
   // Add a new event listener
-  $("#random-image").on("click", function() {
+  $("#random-image").on("click", function () {
     // This would open a new tab to the URL of the clicked image but as a larger resolution
-    const newLargerImageURL = newImageUrl.replace(imageResolution, imageResolutionLarge);
-    window.open(newLargerImageURL, '_blank');
+    const newLargerImageURL = newImageUrl.replace(
+      imageResolution,
+      imageResolutionLarge
+    );
+    window.open(newLargerImageURL, "_blank");
   });
 
   //  Save the new image URL to localStorage
