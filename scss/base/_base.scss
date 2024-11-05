@@ -23,17 +23,7 @@ body {
   background-color: $bgcolor-body;
 }
 
-#container {
-  width: 100%;
-  max-width: 400px;
-  margin: 10px auto;
-  padding: 20px;
-  border: 5px solid rgba(255, 255, 255, 0.5);
-  text-align: center;
-  background-color: $bgcolor-container;
-  border-radius: $br-large;
-  height: 100%;
-}
+
 
 //  Reused Classes
 .reusable-container {

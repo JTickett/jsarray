@@ -1,8 +1,19 @@
-
+#email-list {
+  display: flex;
+  flex-direction: column;
+  @include mq(large) {
+    flex-direction: row;
+  }
+  align-items: flex-start;
+}
 
 .email-list-item {
 
+    width: 400px;
     margin-top: 10px;
+    @include mq(large) {
+      margin-top: 0px;
+  }
     padding: 10px;
     //background-color: lighten($bgcolor-container, 5%);
     border: 1px solid darken($bgcolor-container, 5%);
