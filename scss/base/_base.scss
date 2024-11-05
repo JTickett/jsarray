@@ -15,6 +15,9 @@ body {
 }
 
 body {
+  @include mq(large) {
+    height: 100vh;
+  }
   display: flex;
   margin: 0;
   color: black;
