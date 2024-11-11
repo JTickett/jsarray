@@ -30,7 +30,13 @@
 }
 
 #assigned-images {
-    // width: 100%;
+
+    .email-list-item:first-child {   
+        @include mq(large) {
+            padding-left: 20px;
+        }
+    }
+
 }
 
 
