@@ -31,7 +31,11 @@ $break--xs: 1px;
 $break--s: 460px;
 $break--m: 768px;
 $break--l: 992px;
-$break--xl: 1260px;
+$break--xl: 1280px;
+
+//992 allow 1 column of email list item
+//1260 width should allow 2 columns of email list item
+
 
 //  Z-indexes
 $z-sidebar: 1;

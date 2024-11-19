@@ -1,15 +1,22 @@
 #email-list {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   @include mq(large) {
     flex-direction: row;
+    max-width: 400px;
+  }
+  @include mq(x-large) {
+    max-width: 800px;
   }
   align-items: flex-start;
+  overflow-x: auto;
 }
 
 .email-list-item {
-    min-width: 300px;
+    min-width: 400px;
     max-width: 400px;
+    min-height: 575px;
     margin-top: 10px;
     @include mq(large) {
       margin-top: 0px;
@@ -25,6 +32,8 @@
       display: inline-block;
     }
   }
+
+
 }
 
 
