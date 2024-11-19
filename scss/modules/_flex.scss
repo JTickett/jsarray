@@ -31,7 +31,9 @@
 #assigned-images {
 
     @include mq(large) {
-        padding-left: 20px;
+        &:has(#email-list > li) {
+            padding-left: 20px;
+        }
     }
 }
 

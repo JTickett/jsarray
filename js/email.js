@@ -164,6 +164,7 @@ function addEmailToList(email) {
     .on("click", function () {
       $("#email-input").val(email);
       nativeEmailInput.setCustomValidity(""); // Clear the custom validity message so that when a new email is selected, the "dupe image" message is not shown as lingering from before
+      scrollListIntoView(email);
     });
 
   // THIS IS WHERE YOU NEED TO CONTINUE
