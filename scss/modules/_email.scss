@@ -5,12 +5,34 @@
   @include mq(large) {
     flex-direction: row;
     max-width: 400px;
+    max-height: 592px;
   }
   @include mq(x-large) {
     max-width: 800px;
   }
   align-items: flex-start;
   overflow-x: auto;
+
+
+
+  // &::-webkit-scrollbar {
+  //   height: 10px;
+  // }
+  
+  // /* Track */
+  // &::-webkit-scrollbar-track {
+  //   background: #f1f1f1;
+  // }
+  
+  // /* Handle */
+  // &::-webkit-scrollbar-thumb {
+  //   background: #888;
+  // }
+  
+  // /* Handle on hover */
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background: #555;
+  // } 
 }
 
 .email-list-item {
@@ -19,8 +41,8 @@
     margin-top: 10px;
     @include mq(large) {
       margin-top: 0px;
-      min-height: 592px;
-      max-height: 592px;
+      min-height: 575px;
+      max-height: 575px;
   }
     padding: 10px;
     position: relative;
@@ -40,6 +62,24 @@
       }
     }
 
+    // &::-webkit-scrollbar {
+    //   width: 10px;
+    // }
+    
+    // /* Track */
+    // &::-webkit-scrollbar-track {
+    //   background: #f1f1f1;
+    // }
+    
+    // /* Handle */
+    // &::-webkit-scrollbar-thumb {
+    //   background: #888;
+    // }
+    
+    // /* Handle on hover */
+    // &::-webkit-scrollbar-thumb:hover {
+    //   background: #555;
+    // } 
   
 }
 
