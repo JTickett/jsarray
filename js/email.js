@@ -1,6 +1,11 @@
 // Array to store unique email addresses
 const uniqueEmailAddresses = [];
 
+  // Function to find a list item by its value attribute
+  function findListItemByValue(email) {
+    return $('li[value="' + email + '"]');
+  }
+
 // Assign image to email
 function assignImageToEmail(email, imageURL) {
   const emailInput = document.getElementById("email-input");
