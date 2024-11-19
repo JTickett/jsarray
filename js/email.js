@@ -6,9 +6,11 @@ function findListItemByValue(email) {
   return $('li[value="' + email + '"]');
 }
 
-function scrollListIntoView(email) {
-  const $emailListItem = findListItemByValue(email);
-  $emailListItem.get(0).scrollIntoView({ behavior: "smooth" });
+// Scroll to latest image (when adding a new image)
+function scrollToLatestImageListItem(email) {
+  $emailList = findListItemByValue(email);
+  const $latestImageListItem = $emailList.find('.image-list li:last-child');
+  $latestImageListItem.get(0).scrollIntoView({ behavior: "smooth" });
 }
 
 // Assign image to email
@@ -117,8 +119,11 @@ function addImageToList(email, imageURL) {
       $(this).closest(".image-list-item").remove();
     });
 
-  // Scroll the email list item into view
-  scrollListIntoView(email);
+  // Scroll the email list item into view after a short delay
+  findListItemByValue(email).get(0).scrollIntoView({ behavior: "smooth" });
+  setTimeout(() => {
+    scrollToLatestImageListItem(email);
+  }, 500);
 }
 
 // Check if the email is in the list, and return a value of true or false
@@ -165,14 +170,8 @@ function addEmailToList(email) {
       $("#email-input").val(email);
       const nativeEmailInput = document.getElementById("email-input");
       nativeEmailInput.setCustomValidity(""); // Clear the custom validity message so that when a new email is selected, the "dupe image" message is not shown as lingering from before
-      
-      //TODO: This scroll function here is not working for unknown reasons.
       scrollListIntoView(email);
     });
-
-  // THIS IS WHERE YOU NEED TO CONTINUE
-  // YOU NEED TO ADD THE FUNCTIONALITY TO MAKE THE X APPEAR ON HOVER PROPERLY.
-  // THE CODE BELOW ISNT CORRECT!!!!
 
   // Add event listener to the remove email div
   const $emailListItem = $emailList.find(".email-list-item").last();
