@@ -116,6 +116,9 @@ function addImageToList(email, imageURL) {
       // Remove the image list item
       $(this).closest(".image-list-item").remove();
     });
+
+  // Scroll the email list item into view
+  scrollListIntoView(email);
 }
 
 // Check if the email is in the list, and return a value of true or false
