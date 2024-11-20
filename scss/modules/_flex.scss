@@ -1,6 +1,4 @@
 #container {
-    // width: 100%;
-    // max-width: 400px;
     margin: 10px auto;
     padding: 20px;
     border: 5px solid rgba(255, 255, 255, 0.5);
@@ -15,17 +13,22 @@
         height: auto;
         margin-top: auto;
         margin-bottom: auto;
+        flex-direction: row;
     }
 
     flex-direction: column;
-    @include mq(large) {
-        flex-direction: row;
-    }
 }
 
 #current-image {
-    width: 400px;
-    min-width: 400px;
+    //width: 400px;
+    min-width: 200px;
+    max-width: 400px;
+    
+    @include mq(large) {
+        width: 400px;
+        min-width: 400px;
+        
+    }
 }
 
 #assigned-images {
