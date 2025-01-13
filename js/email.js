@@ -42,7 +42,7 @@ function assignImageToEmail(email, imageURL) {
     // I also clear the custom validity message in two other places (when random image assigned, and when email title is clicked)
     setTimeout(() => {
       emailInput.setCustomValidity("");
-    }, 500);
+    }, 2000);
   }
 }
 
