@@ -10,21 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: "8.2"
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Install Dependencies
-        run: |
-          composer install
-          npm install
-
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -52,18 +37,12 @@ jobs:
             --exclude='.gitattributes' \
             --exclude='.vscode' \
             --exclude='scss' \
-            --exclude='package-lock.json' \
-            --exclude='package.json' \
-            --exclude='composer.lock' \
-            --exclude='jsconfig.json' \
-            --exclude='netlify.toml' \
             ./  ${{ secrets.SSH_USER }}@${{ secrets.DROPLET_IP }}:/var/www/html/jsarray/
 
-      - name: Run post-deployment commands
+      - name: Set permissions
         run: |
           ssh ${{ secrets.SSH_USER }}@${{ secrets.DROPLET_IP }} '
             cd /var/www/html/jsarray && 
             sudo chown -R www-data:www-data . &&
-            sudo chmod -R 755 . &&
-            sudo systemctl restart apache2
+            sudo chmod -R 755 .
           '
